@@ -21,7 +21,7 @@ Churn Control is designed to give businesses actionable insights into customer r
 
 - Data preprocessing and feature engineering
 - Machine learning model training and evaluation
-- An interactive Streamlit app for making predictions and visualizing results
+- An interactive, cloud-hosted Streamlit app that enables users to make predictions and visualize the results.
 
 The goal is to help businesses proactively reduce churn and improve customer satisfaction.
 
