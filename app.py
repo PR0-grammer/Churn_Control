@@ -3,12 +3,14 @@ import pandas as pd
 import numpy as np
 import shap
 import matplotlib.pyplot as plt
-import lightgbm as lgb
+from lightgbm import LGBMClassifier
+import joblib
 
 # ======================================================
 # LOAD MODEL
 # ======================================================
-lgb_clf = lgb.Booster(model_file="lgbm_churn_model.txt")
+# Load the model as LGBMClassifier for predict_proba
+lgb_clf = joblib.load("lgbm_churn_model.pkl")  # Make sure you saved it with joblib
 
 # ======================================================
 # PAGE CONFIG
@@ -24,20 +26,14 @@ st.set_page_config(
 # ======================================================
 st.markdown("""
     <style>
-
-        /* ===============================
-           KPI CARD STYLING
-           =============================== */
         .stat-card {
             border-radius: 15px;
             padding: 25px;
             border: 1px solid #B7E8E3;
             box-shadow: 0px 4px 12px #00000010;
         }
-
     </style>
 """, unsafe_allow_html=True)
-
 
 # ======================================================
 # HEADER (LOGO + TITLE)
@@ -59,7 +55,7 @@ with header_title:
     st.markdown("Created by AAA")
 
 # ======================================================
-# KPI CARDS (CAN BE REPLACED WITH IMAGES)
+# KPI CARDS
 # ======================================================
 st.markdown("### Dataset At a Glance")
 k1, k2, k3 = st.columns(3)
@@ -88,7 +84,6 @@ with k3:
         </div>
     """, unsafe_allow_html=True)
 
-
 # ======================================================
 # INPUT FORM
 # ======================================================
@@ -99,7 +94,6 @@ with st.form("customer_form"):
 
     col1, col2 = st.columns(2)
 
-    # =====INPUTS =====
     with col1:
         age = st.number_input("Age", min_value=18, max_value=100, value=35)
         num_dependents = st.number_input("Number of Dependents", min_value=0, max_value=10, value=0)
@@ -117,8 +111,6 @@ with st.form("customer_form"):
         customer_segment = st.selectbox("Customer Segment", ["Retail", "SME", "Corporate"])
 
     submit_button = st.form_submit_button("Predict Churn ✔️")
-
-
 
 # ======================================================
 # RUN MODEL INFERENCE
@@ -142,23 +134,18 @@ if submit_button:
 
     # Convert categorical columns
     categorical_features = [
-    "Gender",
-    "Marital Status",
-    "Education Level",
-    "Customer Segment"
+        "Gender", "Marital Status", "Education Level", "Customer Segment"
     ]
-    
     for col in categorical_features:
         input_df[col] = input_df[col].astype("category")
 
     # Predict
-    pred = lgb_clf.predict(input_df)[0]
     prob = lgb_clf.predict_proba(input_df)[0, 1]
+    pred = int(prob > 0.5)
 
     st.markdown("## Prediction Result")
     st.success(f"Churn Prediction: **{'YES' if pred == 1 else 'NO'}**")
     st.info(f"Churn Probability: **{prob * 100:.2f}%**")
-
 
     # ======================================================
     # SHAP INTERPRETATION
@@ -181,6 +168,3 @@ if submit_button:
 
     st.pyplot(fig)
     plt.close(fig)
-
-
-
