@@ -1,6 +1,8 @@
 # Churn Control
 
-![Churn Control Logo](white_logo.png)
+<p align="center">
+  <img src="white_logo.png" alt="Churn Control Logo" width="300"/>
+</p>
 
 **Churn Control** is a customer churn prediction project that helps businesses identify customers at risk of leaving. The project leverages machine learning models to predict churn probabilities and provide actionable insights.
 
