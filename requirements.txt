@@ -4,5 +4,4 @@ numpy==2.3.5
 shap==0.50.0
 joblib==1.5.2
 matplotlib==3.8.1
-lightgbm
-
+lightgbm[pandas]
