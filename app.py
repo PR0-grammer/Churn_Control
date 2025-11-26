@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import shap
 import matplotlib.pyplot as plt
+import lightgbm as lgb
 
 # ======================================================
 # LOAD MODEL
@@ -180,5 +181,6 @@ if submit_button:
 
     st.pyplot(fig)
     plt.close(fig)
+
 
 
