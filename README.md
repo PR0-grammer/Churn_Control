@@ -36,6 +36,8 @@ The goal is to help businesses proactively reduce churn and improve customer sat
 ## Usage
 To launch the Streamlit app:
 run "streamlit run app.py" using terminal
+or you can access it through the website:
+https://churn-control.streamlit.app/
 
 ## Data
 Original data sourced from:
