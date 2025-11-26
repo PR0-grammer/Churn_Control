@@ -3,4 +3,4 @@ pandas
 numpy
 joblib
 shap
-matplotlib.pyplot
+matplotlib
