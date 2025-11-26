@@ -1,14 +1,13 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
 import shap
 import matplotlib.pyplot as plt
 
 # ======================================================
 # LOAD MODEL
 # ======================================================
-lgb_clf = joblib.load("lgbm_churn_model.txt")
+lgb_clf = lgb.Booster(model_file="lgbm_churn_model.txt")
 
 # ======================================================
 # PAGE CONFIG
@@ -181,4 +180,5 @@ if submit_button:
 
     st.pyplot(fig)
     plt.close(fig)
+
 
