@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # ======================================================
 # LOAD MODEL
 # ======================================================
-lgb_clf = joblib.load("lgbm_churn_model.pkl")
+lgb_clf = joblib.load("lgbm_churn_model.txt")
 
 # ======================================================
 # PAGE CONFIG
@@ -181,3 +181,4 @@ if submit_button:
 
     st.pyplot(fig)
     plt.close(fig)
+
