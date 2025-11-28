@@ -29,7 +29,7 @@ The goal is to help businesses proactively reduce churn and improve customer sat
 ## Usage
 - Upload customer data and receive churn probability predictions
 - Visualize feature importance using SHAP plots
-- Interactive dashboard to monitor customer churn risk
+- Interactive [dashboard](Churn Report.pbix) to monitor customer churn risk using Power BI.
 
 The service can be accessed it through the website:
 https://churn-control.streamlit.app/
