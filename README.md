@@ -10,9 +10,8 @@
 
 ## Table of Contents
 - [Project Overview](#project-overview)
-- [Features](#features)
 - [Usage](#usage)
-- [Data](#data)
+- [Dataset](#dataset)
 
 ---
 
@@ -27,18 +26,14 @@ The goal is to help businesses proactively reduce churn and improve customer sat
 
 ---
 
-## Features
+## Usage
 - Upload customer data and receive churn probability predictions
 - Visualize feature importance using SHAP plots
 - Interactive dashboard to monitor customer churn risk
-- Modular and easy-to-extend code structure
 
-## Usage
-To launch the Streamlit app:
-run "streamlit run app.py" using terminal
-or you can access it through the website:
+The service can be accessed it through the website:
 https://churn-control.streamlit.app/
 
-## Data
-Original data sourced from:
+## Dataset
+Original dataset sourced from:
 https://www.kaggle.com/datasets/sandiledesmondmfazi/bank-customer-churn
