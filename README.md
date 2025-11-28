@@ -6,6 +6,8 @@
 
 **Churn Control** is a customer churn prediction project that helps businesses identify customers at risk of leaving. The project leverages machine learning models to predict churn probabilities and provide actionable insights.
 
+The service can be accessed it through the website:
+https://churn-control.streamlit.app/
 ---
 
 ## Table of Contents
@@ -27,12 +29,10 @@ The goal is to help businesses proactively reduce churn and improve customer sat
 ---
 
 ## Usage
-- Upload customer data and receive churn probability predictions
+- Upload customer data through the [website](https://churn-control.streamlit.app/) and receive churn probability predictions
 - Visualize feature importance using SHAP plots
-- Interactive [dashboard](Churn Report.pbix) to monitor customer churn risk using Power BI.
+- Interactive [dashboard](Churn%20Report.pbix) to monitor customer churn risk using Power BI.
 
-The service can be accessed it through the website:
-https://churn-control.streamlit.app/
 
 ## Dataset
 Original dataset sourced from:
