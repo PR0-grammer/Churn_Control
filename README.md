@@ -13,6 +13,7 @@ https://churn-control.streamlit.app/
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Usage](#usage)
+- [Metrics and Evaluation](#metrics-and-evaluation)
 - [Dataset](#dataset)
 
 ---
@@ -33,6 +34,27 @@ The goal is to help businesses proactively reduce churn and improve customer sat
 - Visualize feature importance using SHAP plots
 - Interactive [dashboard](Churn%20Report.pbix) to monitor customer churn risk using Power BI.
 
+---
+
+## Metrics and Evaluation
+- Accuracy: 0.95
+- Precision (Class 0): 0.97
+- Recall (Class 0): 0.97
+- F1-Score (Class 0): 0.97
+- Precision (Class 1): 0.81
+- Recall (Class 1): 0.79
+- F1-Score (Class 1): 0.80
+
+- Confusion Matrix:
+- TN: 19,767
+- FP: 542
+- FN: 579
+- TP: 2,240
+
+- ROC-AUC: 0.985
+- PR-AUC: 0.903
+
+---
 
 ## Dataset
 Original dataset sourced from:
